@@ -1,0 +1,408 @@
+{
+  "logs_index_template" : {
+    "order" : 0,
+    "template" : "logs-index*",
+    "settings" : {
+      "index" : {
+        "number_of_shards" : "2"
+      }
+    },
+    "mappings" : {
+      "logs" : {
+        "properties" : {
+          "PlatformVersion" : {
+            "type" : "keyword"
+          },
+          "Platform" : {
+            "type" : "text",
+            "fields" : {
+              "raw" : {
+                "type" : "keyword"
+              }
+            }
+          },
+          "DiskGBFree" : {
+            "type" : "long"
+          },
+          "RequestMethod" : {
+            "type" : "keyword"
+          },
+          "Activity" : {
+            "type" : "keyword"
+          },
+          "DockerTag" : {
+            "type" : "keyword"
+          },
+          "NetInPPS" : {
+            "type" : "double"
+          },
+          "AppID" : {
+            "type" : "keyword"
+          },
+          "SessionElapsedTime" : {
+            "type" : "double"
+          },
+          "OSVersion" : {
+            "type" : "keyword"
+          },
+          "Http5XXs" : {
+            "type" : "long"
+          },
+          "NetInMBPS" : {
+            "type" : "double"
+          },
+          "__CURSOR" : {
+            "type" : "text"
+          },
+          "MediaFiles" : {
+            "type" : "long"
+          },
+          "_EXE" : {
+            "type" : "text"
+          },
+          "Assigned" : {
+            "type" : "boolean"
+          },
+          "SufficientTimeSincePlacementTaken" : {
+            "type" : "boolean"
+          },
+          "SessionPausedTime" : {
+            "type" : "double"
+          },
+          "CODE_FILE" : {
+            "type" : "keyword"
+          },
+          "_SYSTEMD_CGROUP" : {
+            "type" : "text"
+          },
+          "TimeStamp" : {
+            "format" : "dateOptionalTime",
+            "type" : "date"
+          },
+          "AssetTag" : {
+            "type" : "keyword"
+          },
+          "_SYSTEMD_UNIT" : {
+            "type" : "text"
+          },
+          "ServiceVersion" : {
+            "type" : "keyword"
+          },
+          "clientActivitySupport" : {
+            "type" : "keyword"
+          },
+          "BBSessionID" : {
+            "type" : "keyword"
+          },
+          "HasNotHadGrowthTestTimeoutInCurrentWindow" : {
+            "type" : "boolean"
+          },
+          "BBID" : {
+            "type" : "keyword"
+          },
+          "MarkedToReceiveGrowthTest" : {
+            "type" : "boolean"
+          },
+          "GrowthTestExistsForStudentGrade" : {
+            "type" : "boolean"
+          },
+          "LineNumber" : {
+            "type" : "long"
+          },
+          "StudentId" : {
+            "type" : "keyword"
+          },
+          "HasNotAlreadyCompletedGrowthInCurrentWindow" : {
+            "type" : "boolean"
+          },
+          "MESSAGE" : {
+            "type" : "text"
+          },
+          "ThreadId" : {
+            "type" : "long"
+          },
+          "SYSLOG_IDENTIFIER" : {
+            "type" : "text"
+          },
+          "DataType" : {
+            "type" : "keyword"
+          },
+          "_SYSTEMD_SLICE" : {
+            "type" : "text"
+          },
+          "NetOutPPS" : {
+            "type" : "double"
+          },
+          "_UID" : {
+            "type" : "keyword"
+          },
+          "PlacementTestLessonSatisfied" : {
+            "type" : "boolean"
+          },
+          "product" : {
+            "type" : "keyword"
+          },
+          "Dataset" : {
+            "type" : "short"
+          },
+          "ScanCount" : {
+            "type" : "long"
+          },
+          "Http2XXs" : {
+            "type" : "long"
+          },
+          "_BOOT_ID" : {
+            "type" : "text"
+          },
+          "AssetBundleID" : {
+            "type" : "long"
+          },
+          "UpTime" : {
+            "type" : "long"
+          },
+          "OSFamily" : {
+            "type" : "keyword"
+          },
+          "IpAddress" : {
+            "type" : "keyword"
+          },
+          "LexileTestDateWindowActive" : {
+            "type" : "boolean"
+          },
+          "RequestUri" : {
+            "type" : "text",
+            "fields" : {
+              "raw" : {
+                "type" : "keyword"
+              }
+            }
+          },
+          "ErrorMessage" : {
+            "type" : "text",
+            "fields" : {
+              "raw" : {
+                "type" : "keyword"
+              }
+            }
+          },
+          "_PID" : {
+            "type" : "text"
+          },
+          "CPU" : {
+            "type" : "double"
+          },
+          "PRIORITY" : {
+            "type" : "keyword"
+          },
+          "Guid" : {
+            "type" : "keyword"
+          },
+          "SessionPrescribedTime" : {
+            "type" : "double"
+          },
+          "_SELINUX_CONTEXT" : {
+            "type" : "text"
+          },
+          "OSArchitecture" : {
+            "type" : "long"
+          },
+          "Version" : {
+            "type" : "text",
+            "fields" : {
+              "raw" : {
+                "type" : "keyword"
+              }
+            }
+          },
+          "_TRANSPORT" : {
+            "type" : "text"
+          },
+          "NetInBPS" : {
+            "type" : "double"
+          },
+          "SessionId" : {
+            "type" : "keyword"
+          },
+          "MediaVersion" : {
+            "type" : "keyword"
+          },
+          "ClientSupportsRequiredDatasets" : {
+            "type" : "boolean"
+          },
+          "LexileTestNotAlreadyActive" : {
+            "type" : "boolean"
+          },
+          "UNIT" : {
+            "type" : "text"
+          },
+          "Channel" : {
+            "type" : "keyword"
+          },
+          "ConfigVersion" : {
+            "type" : "keyword"
+          },
+          "ScanErrors" : {
+            "type" : "long"
+          },
+          "CODE_LINE" : {
+            "type" : "text"
+          },
+          "BBSID" : {
+            "type" : "keyword"
+          },
+          "PlatformName" : {
+            "type" : "keyword"
+          },
+          "_COMM" : {
+            "type" : "text"
+          },
+          "HttpRequests" : {
+            "type" : "long"
+          },
+          "State" : {
+            "type" : "keyword"
+          },
+          "MarkedToReceiveLexileTest" : {
+            "type" : "boolean"
+          },
+          "Environment" : {
+            "type" : "keyword"
+          },
+          "Region" : {
+            "type" : "keyword"
+          },
+          "Http4XXs" : {
+            "type" : "long"
+          },
+          "District" : {
+            "type" : "keyword"
+          },
+          "HttpMisses" : {
+            "type" : "long"
+          },
+          "_HOSTNAME" : {
+            "type" : "text"
+          },
+          "Measurement" : {
+            "type" : "long"
+          },
+          "_CAP_EFFECTIVE" : {
+            "type" : "text"
+          },
+          "ProductHasLexileTest" : {
+            "type" : "boolean"
+          },
+          "GrowthTestDateWindowActive" : {
+            "type" : "boolean"
+          },
+          "Message" : {
+            "type" : "text",
+            "fields" : {
+              "raw" : {
+                "type" : "keyword"
+              }
+            }
+          },
+          "DeviceId" : {
+            "type" : "keyword"
+          },
+          "NoNoninteruptableLessonIsActive" : {
+            "type" : "boolean"
+          },
+          "_SOURCE_REALTIME_TIMESTAMP" : {
+            "type" : "text"
+          },
+          "NetOutMBPS" : {
+            "type" : "double"
+          },
+          "Source" : {
+            "type" : "keyword"
+          },
+          "_GID" : {
+            "type" : "keyword"
+          },
+          "_MACHINE_ID" : {
+            "type" : "text"
+          },
+          "School" : {
+            "type" : "keyword"
+          },
+          "__REALTIME_TIMESTAMP" : {
+            "type" : "text"
+          },
+          "Http3XXs" : {
+            "type" : "long"
+          },
+          "_CMDLINE" : {
+            "type" : "text"
+          },
+          "UserAgent" : {
+            "type" : "text"
+          },
+          "SYSLOG_FACILITY" : {
+            "type" : "text"
+          },
+          "HttpUsers" : {
+            "type" : "long"
+          },
+          "DiskGBUsed" : {
+            "type" : "long"
+          },
+          "GrowthTestNotAlreadyActive" : {
+            "type" : "boolean"
+          },
+          "MissingFiles" : {
+            "type" : "text"
+          },
+          "productRevision" : {
+            "type" : "keyword"
+          },
+          "EngineAddress" : {
+            "type" : "keyword"
+          },
+          "SiteCode" : {
+            "type" : "text",
+            "fields" : {
+              "raw" : {
+                "type" : "keyword"
+              }
+            }
+          },
+          "CODE_FUNCTION" : {
+            "type" : "text"
+          },
+          "Service" : {
+            "type" : "keyword"
+          },
+          "Severity" : {
+            "type" : "keyword"
+          },
+          "NetOutBPS" : {
+            "type" : "double"
+          },
+          "ProductHasGrowthTest" : {
+            "type" : "boolean"
+          },
+          "ReadingLesson248Satisfied" : {
+            "type" : "boolean"
+          },
+          "Username" : {
+            "type" : "text",
+            "fields" : {
+              "raw" : {
+                "type" : "keyword"
+              }
+            }
+          },
+          "ProcessId" : {
+            "type" : "long"
+          },
+          "__MONOTONIC_TIMESTAMP" : {
+            "type" : "text"
+          }
+        }
+      }
+    },
+    "aliases" : { }
+  }
+}

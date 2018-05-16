@@ -1,0 +1,26 @@
+mappings: {
+  logs: {
+    properties: {
+      TimeStamp: { type: 'date', format: 'strict_date_optional_time' },
+      Details: { type: 'text' },
+      Environment: { type: 'keyword' },
+      Message: { type: 'text' },
+      OSArchitecture: { type: 'text' },
+      OSFamily: { type: 'keyword' },
+      OSVersion: { type: 'keyword' },
+      PlatformName: { type: 'keyword' },
+      PlatformVersion: { type: 'keyword' },
+      ReferrerUrl: { type: 'text' },
+      RequestedUrl: { type: 'text' },
+      Service: { type: 'keyword' },
+      Severity: { type: 'keyword' },
+      SiteCode: { type: 'keyword' },
+      Source: { type: 'keyword' },
+      Stack: { type: 'text' },
+      StatusCode: { type: 'keyword' },
+      UserAgent: { type: 'text' },
+      Username: { type: 'keyword' },
+      Version: { type: 'keyword' }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+====
+ c2
+====
+
+sudo su
+apt install bridge-utils
+cd /etc/network
+mv interfaces interfaces.dhcp
+nano interfaces
+  auto lo
+  iface lo inet loopback
+
+  auto br0
+  iface br0 inet static
+  address 10.1.0.120
+  netmask 255.255.252.0
+  gateway 10.1.0.1
+  dns-nameservers 10.1.100.10 10.1.100.11
+  bridge_ports eno1
+  bridge_stp off
+  bridge_fd 0
+  bridge_maxwait 0
+
+reboot
+
+apt install zfsutils-linux
+zpool create -f vol0 /dev/disk/by-id/ata-...
+zfs set compression=lz4 vol0
+
+
+
+https://en.wikipedia.org/wiki/CUDA#GPUs_supported
+
+
+python3 --version
+  Python 3.5.2
+
+wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+sudo bash Anaconda3-5.1.0-Linux-x86_64.sh
+
+logout, login
+
+conda list
+sudo su
+cd ~
+nano .bashrc
+  export PATH="/home/dml/anaconda3/bin:$PATH"
+
+logout, login
+
+which conda
+  /home/dml/anaconda3/bin/conda
+sudo ~/anaconda3/bin/conda install pytorch torchvision -c pytorch
+
+cd /vol/git/
+git clone https://github.com/PacktPublishing/Deep-Learning-with-PyTorch
+cd Deep-Learning-with-PyTorch
+jupyter notebook --ip=10.1.0.118
+
+http://10.1.0.118:8888/?token=6730e2a631372f2be2117f461a6d8a882dae3b47117cbeac
+
+
+nano /etc/modprobe.d/blacklist-nouveau.conf
+  blacklist nouveau
+  options nouveau modeset=0
+update-initramfs -u
+reboot
+
+sudo apt install gcc make
+wget http://us.download.nvidia.com/XFree86/Linux-x86_64/375.82/NVIDIA-Linux-x86_64-375.82.run
+sudo bash ./NVIDIA-Linux-x86_64-375.82.run
+
+sudo reboot

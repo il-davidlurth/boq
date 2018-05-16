@@ -1,0 +1,71 @@
+Source:MediaBooster AND Message:heartbeat
+Source:MediaBooster AND -Message:heartbeat
+Source:MediaBooster AND _exists_:MESSAGE
+Source:MediaBooster AND Message:media_sync
+Source:MediaBooster AND Message:update-queued
+
+Source:MediaBooster AND _exists_:ServiceResponseTime
+Source:Client AND Version:3* AND -MediaServer:*content.*
+
+
+
+ls |head -n 4000 | xargs -I '{}' mv {} ../2018-02_0/
+
+================================================
+scp dml-prom0:/vol0/logs/client/2017-12-* .
+scp dml-prom0:/vol0/logs/client/2018-01-* .
+scp dml-prom0:/vol0/logs/client/2018-02-* .
+
+node load2es.js /vol0/boq/client/2017-12/ /vol0/boq/client/2017-12.done/ client-2017.12
+node load2es.js /vol0/boq/client/2018-01/ /vol0/boq/client/2018-01.done/ client-2018.01
+node load2es.js /vol0/boq/client/2018-02/ /vol0/boq/client/2018-02.done/ client-2018.02
+
+node load2es.js /vol0/boq/client/2018-02_0/ /vol0/boq/client/2018-02.done/ client-2018.02
+node load2es.js /vol0/boq/client/2018-02_1/ /vol0/boq/client/2018-02.done/ client-2018.02
+
+node moveFiles.js /vol0/boq/client/2017-12.done/ /vol0/boq/client/2017-12/
+node moveFiles.js /vol0/boq/client/2018-01.done/ /vol0/boq/client/2018-01/
+node moveFiles.js /vol0/boq/client/2018-02.done/ /vol0/boq/client/2018-02/
+
+================================================
+scp dml-prom0:/vol0/logs/booster/2017-12-* .
+scp dml-prom0:/vol0/logs/booster/2018-01-* .
+scp dml-prom0:/vol0/logs/booster/2018-02-* .
+
+node load2es.js /vol0/boq/booster/2017-12/ /vol0/boq/booster/2017-12.done/ booster-2017.12
+node load2es.js /vol0/boq/booster/2018-01/ /vol0/boq/booster/2018-01.done/ booster-2018.01
+node load2es.js /vol0/boq/booster/2018-02/ /vol0/boq/booster/2018-02.done/ booster-2018.02
+
+node moveFiles.js /vol0/boq/booster/2017-12.done/ /vol0/boq/booster/2017-12/
+node moveFiles.js /vol0/boq/booster/2018-01.done/ /vol0/boq/booster/2018-01/
+node moveFiles.js /vol0/boq/booster/2018-02.done/ /vol0/boq/booster/2018-02/
+
+
+================================================
+scp dml-prom0:/vol0/logs/portal/2017-12-* .
+scp dml-prom0:/vol0/logs/portal/2018-01-* .
+scp dml-prom0:/vol0/logs/portal/2018-02-* .
+
+node load2es.js /vol0/boq/portal/2017-12/ /vol0/boq/portal/2017-12.done/ portal-2017.12
+node load2es.js /vol0/boq/portal/2018-01/ /vol0/boq/portal/2018-01.done/ portal-2018.01
+node load2es.js /vol0/boq/portal/2018-02/ /vol0/boq/portal/2018-02.done/ portal-2018.02
+
+node moveFiles.js /vol0/boq/portal/2017-12.done/ /vol0/boq/portal/2017-12/
+node moveFiles.js /vol0/boq/portal/2018-01.done/ /vol0/boq/portal/2018-01/
+node moveFiles.js /vol0/boq/portal/2018-02.done/ /vol0/boq/portal/2018-02/
+
+
+
+node moveFiles.js /vol0/boq/client-processed/ /vol0/boq/client/
+node moveFiles.js /vol0/boq/booster-processed/ /vol0/boq/booster/
+
+
+
+
+
+
+
+
+80268055 - 80458038 = 189983
+82143346 - 82345750 = 202404
+                      392387

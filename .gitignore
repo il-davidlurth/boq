@@ -1,0 +1,8 @@
+conf/
+old/
+node_modules/
+logs/
+log/
+scratch.js
+date.js
+test.js

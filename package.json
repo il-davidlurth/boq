@@ -1,0 +1,22 @@
+{
+  "name": "boq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "load2es.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/il-davidlurth/boq.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/il-davidlurth/boq/issues"
+  },
+  "homepage": "https://github.com/il-davidlurth/boq#readme",
+  "dependencies": {
+    "elasticsearch": "^14.1.0"
+  }
+}
